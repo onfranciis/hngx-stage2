@@ -18,11 +18,11 @@ const CreateUser: RequestHandler = async (req, res) => {
           error: "A user with that name already exists",
           result: null,
         });
+      } else {
+        const { name: username, _id: id } = await new User({ name }).save();
+
+        res.json({ name: username, id });
       }
-
-      const { name: username, _id: id } = await new User({ name }).save();
-
-      res.json({ name: username, id });
     }
   } catch (error) {
     console.log(error);
