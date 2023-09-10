@@ -13,7 +13,7 @@ const ReadUser: RequestHandler = async (req, res) => {
       const returnedUser = await User.findOne({ name });
 
       if (!returnedUser) {
-        return res.status(409).json({
+        return res.status(404).json({
           message: "",
           error: "This user does not exist",
           result: null,
