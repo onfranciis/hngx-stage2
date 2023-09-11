@@ -2,7 +2,7 @@
 
 ### Everything you need to know
 
-~By~ ~Francis~ ~Onukwu~
+By Francis Onukwu
 
 ---
 
