@@ -8,7 +8,7 @@ This backend project is created to serve an A.P.I using the R.E.S.T protocool. C
 
 > ### Creating a user
 
-- Method
+- Method  
   POST
 
 <br>
@@ -35,7 +35,7 @@ If the name is not already in use, you should get the name and an id as successf
 
 > ### Reading a user
 
-- Method
+- Method  
   GET
 
 <br>
@@ -58,7 +58,7 @@ If the id exists, you should get the name and id as successful response.
 
 > ### Updating a user
 
-- Method
+- Method  
   PATCH
 
 <br>
@@ -92,7 +92,7 @@ If the id exists and the new name isn't taken already, you should get the name a
 
 > ### Deleting a user
 
-- Method
+- Method  
   DELETE
 
 <br>
