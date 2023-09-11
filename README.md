@@ -46,11 +46,12 @@ This backend project is created to serve an A.P.I using the R.E.S.T protocool. C
 
 <br>
 
-- Params
-  - name: String
-
 ```
- https://hngx-stage2.onrender.com/api?name=John
+ https://hngx-stage2.onrender.com/api
+
+ {
+    name: "John"
+ }
 ```
 
 If the name is not already in use, you should get the name and an id as successfull response.
@@ -72,14 +73,11 @@ If the name is not already in use, you should get the name and an id as successf
 
 <br>
 
-- Params
-  - name: String
-
 ```
- https://hngx-stage2.onrender.com/api?name=John
+ https://hngx-stage2.onrender.com/api/64fe1a06ef2f7757e645289a
 ```
 
-If the name exists, you should get the name and id as successfull response.
+If the id exists, you should get the name and id as successfull response.
 
 ```
 {
@@ -101,21 +99,19 @@ If the name exists, you should get the name and id as successfull response.
 - Body
   ```
   {
-    name: <String>,
     newName: <String>
   }
   ```
 
 ```
- https://hngx-stage2.onrender.com/api
+ https://hngx-stage2.onrender.com/api/64fe1a06ef2f7757e645289a
 
  {
-    name: "John",
     newName: "Joe"
  }
 ```
 
-If the name exists and the new name isn't taken already, you should get the name and id as successfull response.
+If the id exists and the new name isn't taken already, you should get the name and id as successfull response.
 
 ```
 {
@@ -134,18 +130,15 @@ If the name exists and the new name isn't taken already, you should get the name
 
 <br>
 
-- Params
-  - name: String
-
 ```
- https://hngx-stage2.onrender.com/api?name=John
+ https://hngx-stage2.onrender.com/api/64fe1a06ef2f7757e645289a
 ```
 
-If the name exists, you should get a successfull response.
+If the id exists, you should get a successfull response.
 
 ```
 {
-    message: "John has been deleted successfully",
+    message: "64fe1a06ef2f7757e645289a has been deleted successfully",
 }
 ```
 
@@ -154,7 +147,7 @@ If the name exists, you should get a successfull response.
 
 ### Note :bangbang:
 
-- All values sent are trimmed, so sending "`John`" is the same as "`John`" .
+- All values sent are trimmed.
 - When there is an error, a detailed reason would be sent in the message property of the response object
 
 ```
