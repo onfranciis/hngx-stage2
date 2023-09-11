@@ -77,7 +77,7 @@ If the name is not already in use, you should get the name and an id as successf
  https://hngx-stage2.onrender.com/api/64fe1a06ef2f7757e645289a
 ```
 
-If the id exists, you should get the name and id as successfull response.
+If the id exists, you should get the name and id as successful response.
 
 ```
 {
@@ -134,7 +134,7 @@ If the id exists and the new name isn't taken already, you should get the name a
  https://hngx-stage2.onrender.com/api/64fe1a06ef2f7757e645289a
 ```
 
-If the id exists, you should get a successfull response.
+If the id exists, you should get a successful response.
 
 ```
 {
