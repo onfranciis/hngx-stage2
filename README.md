@@ -6,6 +6,8 @@ By Francis Onukwu
 
 ---
 
+![UML diagram for the CRUD User Program By Francis Onukwu](./src/utils/UML.png)
+
 This is a backend project built using TypeScript for a NodeJS server and a MongoDb powered database. To get this running on your machine, you must first download and install [NodeJs](https://nodejs.org/en/download), clone this repository by running
 `git clone https://github.com/onfranciis/hngx-stage2`, navigate to the `hngx-stage2` folder in your terminal and running `npm install`. Once all the dependencies have been installed you should create a `.env` file and fill it with these details
 
