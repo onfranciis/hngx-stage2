@@ -2,6 +2,8 @@
 
 ### A guide to consuming this project
 
+![UML diagram for the CRUD User Program By Francis Onukwu](./src/utils/UML.png)
+
 This backend project is created to serve an A.P.I using the R.E.S.T protocool. Connected to a database, this service allows clients to make C.R.U.D operations and here's how.
 
 <br>
