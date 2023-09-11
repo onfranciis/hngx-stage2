@@ -1,13 +1,16 @@
 import { RequestHandler } from "express";
 import User from "../models/User";
+import { isValidObjectId } from "mongoose";
 
 const UpdateUser: RequestHandler = async (req, res) => {
-  const name = req.body.name.trim();
+  const id = req.params?.id?.trim();
   const newName = req.body.newName.trim();
 
   try {
-    if (!name) {
-      res.status(400).json({ message: "No name was specified!" });
+    if (!id) {
+      res.status(400).json({ message: "No id was specified!" });
+    } else if (!isValidObjectId(id)) {
+      return res.status(400).json({ message: "Invalid Id" });
     } else {
       const targetName = await User.findOne({ name: newName });
 
@@ -16,14 +19,14 @@ const UpdateUser: RequestHandler = async (req, res) => {
           message: "This target name already exists",
         });
       } else {
-        const updatedUser = await User.findOneAndUpdate(
-          { name },
+        const updatedUser = await User.findByIdAndUpdate(
+          { _id: id },
           { name: newName }
         );
 
         if (!updatedUser) {
           return res.status(404).json({
-            message: "No user was found with this name!",
+            message: "No user was found with this id!",
           });
         } else {
           const { _id: id } = updatedUser;

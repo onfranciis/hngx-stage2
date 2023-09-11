@@ -14,9 +14,9 @@ app.get("/", (req, res) => {
 });
 
 app.post("/api/", CreateUser);
-app.get("/api/", ReadUser);
-app.patch("/api/", UpdateUser);
-app.delete("/api/", DeleteUser);
+app.get("/api/:id", ReadUser);
+app.patch("/api/:id", UpdateUser);
+app.delete("/api/:id", DeleteUser);
 
 app.all("*", (req, res) => {
   res.status(404).json({

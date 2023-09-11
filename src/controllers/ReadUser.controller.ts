@@ -1,24 +1,27 @@
 import { RequestHandler } from "express";
 import User from "../models/User";
+import { isValidObjectId } from "mongoose";
 
 const ReadUser: RequestHandler = async (req, res) => {
-  const receivedParam = req.query?.name as string;
-  const name = receivedParam?.trim();
+  const receivedParam = req.params?.id as string;
+  const id = receivedParam?.trim();
 
   try {
-    if (!name) {
-      return res.status(400).json({ message: "No name was specified!" });
+    if (!id) {
+      return res.status(400).json({ message: "No id was specified!" });
+    } else if (!isValidObjectId(id)) {
+      return res.status(400).json({ message: "Invalid Id" });
     } else {
-      const returnedUser = await User.findOne({ name });
+      const returnedUser = await User.findById(id);
 
       if (!returnedUser) {
         return res.status(404).json({
           message: "This user does not exist",
         });
       } else {
-        const { name: returnedName, _id: id } = returnedUser;
+        const { name, _id: id } = returnedUser;
 
-        return res.json({ user: returnedName, id });
+        return res.json({ user: name, id });
       }
     }
   } catch (error) {

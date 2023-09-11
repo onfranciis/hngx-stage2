@@ -1,23 +1,26 @@
 import { RequestHandler } from "express";
 import User from "../models/User";
+import { isValidObjectId } from "mongoose";
 
 const DeleteUser: RequestHandler = async (req, res) => {
-  const receivedParam = req.query?.name as string;
-  const name = receivedParam?.trim();
+  const receivedParam = req.params?.id as string;
+  const id = receivedParam?.trim();
 
   try {
-    if (!name) {
-      res.status(400).json({ message: "No name was specified!", result: null });
+    if (!id) {
+      res.status(400).json({ message: "No id was specified!", result: null });
+    } else if (!isValidObjectId(id)) {
+      return res.status(400).json({ message: "Invalid Id" });
     } else {
-      const DeletedUser = await User.findOneAndDelete({ name });
+      const DeletedUser = await User.findByIdAndDelete(id);
 
       if (!DeletedUser) {
         return res.status(404).json({
-          message: "No user was found with this name!",
+          message: "No user was found with this id!",
         });
       } else {
         return res.json({
-          message: `${name} has been deleted successfully`,
+          message: `${id} has been deleted successfully`,
         });
       }
     }

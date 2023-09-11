@@ -2,7 +2,7 @@ import { RequestHandler } from "express";
 import User from "../models/User";
 
 const CreateUser: RequestHandler = async (req, res) => {
-  const receivedParam = req.query?.name as string;
+  const receivedParam = req.body?.name as string;
   const name = receivedParam?.trim();
 
   try {
