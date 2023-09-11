@@ -15,7 +15,13 @@ DEV_DB_URL = <A valid MongoDb Url>
 ENVIRONMENT = "development"
 ```
 
-You can get a free MongoDb Url from [Atlas](https://www.mongodb.com/atlas/database). Now in your terminal, run `npm run serve` and if successfull, you should see `... development server has started on port 1234`.
+You can get a free MongoDb Url from [Atlas](https://www.mongodb.com/atlas/database). Now in your terminal, run `npm run serve` and if successfull, you should see `... development server has started on port 1234`. Now head over to `http://localhost:1234` on your browser and if everything is successfull, you should see this
+
+```
+{
+  connected:true
+}
+```
 
 ---
 
@@ -42,7 +48,7 @@ This backend project is created to serve an A.P.I using the R.E.S.T protocool. C
   - name: String
 
 ```
- www.example.com/api?name=John
+ https://hngx-stage2.onrender.com/api?name=John
 ```
 
 If the name is not already in use, you should get the name and an id as successfull response.
@@ -68,7 +74,7 @@ If the name is not already in use, you should get the name and an id as successf
   - name: String
 
 ```
- www.example.com/api?name=John
+ https://hngx-stage2.onrender.com/api?name=John
 ```
 
 If the name exists, you should get the name and id as successfull response.
@@ -99,7 +105,7 @@ If the name exists, you should get the name and id as successfull response.
   ```
 
 ```
- www.example.com/api
+ https://hngx-stage2.onrender.com/api
 
  {
     name: "John",
@@ -130,7 +136,7 @@ If the name exists and the new name isn't taken already, you should get the name
   - name: String
 
 ```
- www.example.com/api?name=John
+ https://hngx-stage2.onrender.com/api?name=John
 ```
 
 If the name exists, you should get a successfull response.
