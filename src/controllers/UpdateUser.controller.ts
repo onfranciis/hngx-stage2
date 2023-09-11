@@ -7,17 +7,13 @@ const UpdateUser: RequestHandler = async (req, res) => {
 
   try {
     if (!name) {
-      res
-        .status(400)
-        .json({ message: "", error: "No name was specified!", result: null });
+      res.status(400).json({ message: "No name was specified!" });
     } else {
       const targetName = await User.findOne({ name: newName });
 
       if (targetName) {
         return res.status(409).json({
-          message: "",
-          error: "This target name already exists",
-          result: null,
+          message: "This target name already exists",
         });
       } else {
         const updatedUser = await User.findOneAndUpdate(
@@ -27,9 +23,7 @@ const UpdateUser: RequestHandler = async (req, res) => {
 
         if (!updatedUser) {
           return res.status(404).json({
-            message: "",
-            error: "No user was found with this name!",
-            result: null,
+            message: "No user was found with this name!",
           });
         } else {
           const { _id: id } = updatedUser;
@@ -40,9 +34,7 @@ const UpdateUser: RequestHandler = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
-    res
-      .status(500)
-      .json({ message: "", error: "Something went wrong", result: null });
+    return res.status(500).json({ message: "Something went wrong" });
   }
 };
 

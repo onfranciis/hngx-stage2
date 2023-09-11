@@ -13,9 +13,15 @@ app.get("/", (req, res) => {
   res.send({ connected: true });
 });
 
-app.post("/api/create/", CreateUser);
-app.get("/api/read/:name", ReadUser);
-app.patch("/api/update/", UpdateUser);
-app.delete("/api/delete/", DeleteUser);
+app.post("/api/", CreateUser);
+app.get("/api/", ReadUser);
+app.patch("/api/", UpdateUser);
+app.delete("/api/", DeleteUser);
+
+app.all("*", (req, res) => {
+  res.status(404).json({
+    message: "The route you just attempted is not supported!",
+  });
+});
 
 export default app;

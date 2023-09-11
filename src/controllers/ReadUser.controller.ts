@@ -2,33 +2,28 @@ import { RequestHandler } from "express";
 import User from "../models/User";
 
 const ReadUser: RequestHandler = async (req, res) => {
-  const name = req.params.name.trim();
+  const receivedParam = req.query?.name as string;
+  const name = receivedParam?.trim();
 
   try {
     if (!name) {
-      res
-        .status(400)
-        .json({ message: "", error: "No name was specified!", result: null });
+      return res.status(400).json({ message: "No name was specified!" });
     } else {
       const returnedUser = await User.findOne({ name });
 
       if (!returnedUser) {
         return res.status(404).json({
-          message: "",
-          error: "This user does not exist",
-          result: null,
+          message: "This user does not exist",
         });
       } else {
         const { name: returnedName, _id: id } = returnedUser;
 
-        res.json({ user: returnedName, id });
+        return res.json({ user: returnedName, id });
       }
     }
   } catch (error) {
     console.log(error);
-    res
-      .status(500)
-      .json({ message: "", error: "Something went wrong", result: null });
+    return res.status(500).json({ message: "Something went wrong" });
   }
 };
 
