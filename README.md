@@ -24,3 +24,7 @@ You can get a free MongoDb Url from [Atlas](https://www.mongodb.com/atlas/databa
   connected:true
 }
 ```
+
+<br>
+
+The API documentation can be found [here](./DOCUMENTATION.md)
