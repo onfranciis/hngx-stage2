@@ -8,7 +8,8 @@ import ShowAllUsers from "./controllers/ShowAllUsers.controller";
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
   res.send({ connected: true });

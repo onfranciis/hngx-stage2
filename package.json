@@ -14,13 +14,16 @@
   "author": "Francis Onukwu",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "express": "4.18.2",
+    "express-formidable": "^1.2.0",
     "mongoose": "7.5.0",
     "pm2": "5.3.0"
   },
   "devDependencies": {
     "@types/cors": "2.8.13",
     "@types/express": "4.17.17",
+    "@types/express-formidable": "^1.2.0",
     "@types/mongoose": "5.11.97",
     "@types/node": "20.5.8",
     "dotenv": "16.3.1",
