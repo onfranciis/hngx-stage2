@@ -43,6 +43,52 @@ If the name is not already in use, you should get the name and an id as successf
 <br>
 <br>
 
+> ### Displaying all users
+
+- <b>Method</b>
+  GET
+
+  <br>
+
+- <b>URL</b>
+  https://hngx-stage2.onrender.com/api/
+
+```
+// Example response
+
+{
+    "users": [
+        {
+            "user": "Nat",
+            "id": "64fde2f0850aba59ada66e56"
+        },
+        {
+            "user": "John Doee",
+            "id": "64fde381f672d85f237222b9"
+        },
+        {
+            "user": "Dammy",
+            "id": "64fde438adfb59cb55b5feef"
+        },
+        {
+            name: "John",
+            id: "64fe1a06ef2f7757e645289a"
+        }
+        {
+            "user": "Janey",
+            "id": "64fe1a06ef2f7757e645289a"
+        },
+        {
+            "user": "Jang",
+            "id": "64ff060d6ef23697dbb1513a"
+        }
+    ]
+}
+```
+
+<br>
+<br>
+
 > ### Reading a user
 
 - <b>Method</b>
