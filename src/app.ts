@@ -4,6 +4,7 @@ import CreateUser from "./controllers/CreateUser.controller";
 import ReadUser from "./controllers/ReadUser.controller";
 import UpdateUser from "./controllers/UpdateUser.controller";
 import DeleteUser from "./controllers/DeleteUser.controller";
+import ShowAllUsers from "./controllers/ShowAllUsers.controller";
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/api/", CreateUser);
+app.get("/api/", ShowAllUsers);
 app.get("/api/:id", ReadUser);
 app.patch("/api/:id", UpdateUser);
 app.delete("/api/:id", DeleteUser);
