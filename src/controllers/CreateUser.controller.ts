@@ -7,9 +7,7 @@ const CreateUser: RequestHandler = async (req, res) => {
 
   try {
     if (!name) {
-      return res
-        .status(400)
-        .json({ message: "", error: "No name was specified!", result: null });
+      return res.status(400).json({ message: "No name was specified!" });
     } else {
       const existingUser = await User.findOne({ name });
 
